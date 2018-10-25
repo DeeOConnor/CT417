@@ -1,6 +1,6 @@
 package test;
-
 // @author 15332286
+
 import assignment1.Student;
 import java.time.LocalDate;
 import java.time.Month;
@@ -19,9 +19,15 @@ public class UniTest {
     @Test
     public void checkUsername() {
         //String name, LocalDate dob, Course course, Module module
-        Student s = new Student("Michael", "CS & IT", "CT417"); //that shouldn't work as other params are missing..
         LocalDate newDOB = LocalDate.of(1990, Month.MAY, 10);
-        s.setDateOfBirth(newDOB);
+        Student s = new Student("Michael", newDOB, "CS & IT", "CT417"); //that shouldn't work as other params are missing..
+        //LocalDate newDOB = LocalDate.of(1990, Month.MAY, 10);
+        //s.setDateOfBirth(newDOB);
+        
+        //LocalDate today = LocalDate.now();                          //Today's date
+        //LocalDate birthday = LocalDate.of(1960, Month.JANUARY, 1);  //Birth date
+        
+        
         //need to create entire course in here!?
         //https://stackoverflow.com/questions/2923227/displaying-date-of-birth-in-java-by-using-date-util for dob
         String testUsername = s.getUsername();
@@ -31,8 +37,8 @@ public class UniTest {
     @Test
     public void checkAge() {
         LocalDate birthDate = LocalDate.of(2000, Month.JANUARY, 31);
-        Student s2 = new Student("Michael", "CS & IT", "CT417");
-        s2.setDateOfBirth(birthDate);
+        Student s2 = new Student("Michael", birthDate, "CS & IT", "CT417");
+        // s2.setDateOfBirth(birthDate);
         //int actual = AgeCalculator.calculateAge(birthDate, LocalDate.of(2016, 7, 12));
         int age = s2.getAge();
         

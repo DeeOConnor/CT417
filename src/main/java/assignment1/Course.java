@@ -1,41 +1,40 @@
 package assignment1;
+//@author 15332286 
 
 import org.joda.time.DateTime;
-// https://stackoverflow.com/questions/19026744/maven-complaints-about-joda-time-even-though-i-installed-it
 import java.util.ArrayList;
-import java.util.List;
-
-//@author 15332286 
  
 public class Course {
 
     private String courseName;
-    List<Student> students = new ArrayList<>();
-    List<Module> modules = new ArrayList<>();
+    //List<Student> students = new ArrayList<>();
+    private ArrayList<Module> modules;
+    private ArrayList<Student> students;
     
     private final DateTime date = new DateTime();
     
-    DateTime startDate = new DateTime(date);
-    DateTime endDate = new DateTime(date);
-    
-    //DateTime dt = new DateTime();
-    //int month = dt.getMonthOfYear();  // where January is 1 and December is 12
-    //int year = dt.getYear();
+    DateTime startDate = new DateTime(date);    //DateTime dt = new DateTime();
+    DateTime endDate = new DateTime(date);      //int month = dt.getMonthOfYear();  // Jan: 1 and Dec: 12
+                                                //int year = dt.getYear();
     
     public Course(String name, DateTime start, DateTime end) {
         this.courseName = name;
         this.startDate = start;
         this.endDate = end;
         
-        //list of students initialised
-        //list of modules
+        this.modules = new ArrayList();
+        this.students = new ArrayList();
     }
     
     //Student foo = new Student(23, "Foo", 22);
-
     //students.add (foo);
+    public void addModule(Module module) {
+        modules.add(module);
+    }
+    //Need to list modules when called
+    
+    public void addStudent(Student student) {
+        students.add(student);
+    }
+    //Need to list students when called
 }
-
-// links https://kodejava.org/how-do-i-create-datetime-object-in-joda-time/
-// https://codereview.stackexchange.com/questions/70630/school-which-registers-students-by-preferred-courses
-// https://stackoverflow.com/questions/42373289/creating-a-student-arraylist-to-add-students-to-course-class-java
